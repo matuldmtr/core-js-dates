@@ -131,8 +131,12 @@ function getCountDaysOnPeriod(dateStart, dateEnd) {
  * '2024-02-02', { start: '2024-02-02', end: '2024-03-02' } => true
  * '2024-02-10', { start: '2024-02-02', end: '2024-03-02' } => true
  */
-function isDateInPeriod(/* date, period */) {
-  throw new Error('Not implemented');
+function isDateInPeriod(date, period) {
+  const value = new Date(date);
+  const start = new Date(period.start);
+  const end = new Date(period.end);
+
+  return value >= start && value <= end;
 }
 
 /**
@@ -147,6 +151,11 @@ function isDateInPeriod(/* date, period */) {
  * '2010-12-15T22:59:00.000Z' => '12/15/2010, 10:59:00 PM'
  */
 function formatDate(/* date */) {
+  // const newDate = new Date(date);
+  // const dat = newDate.toLocaleDateString('en-US');
+  // const time = newDate.toLocaleTimeString('en-US', { timeZone: 'UTC' });
+
+  // return `${dat}, ${time}`;
   throw new Error('Not implemented');
 }
 
